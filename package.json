@@ -1,7 +1,7 @@
 {
-  "name": "handlefile",
+  "name": "batchPDF",
   "version": "1.0.0",
-  "description": "a node project that can handle file",
+  "description": "a node programing that fetch key infomation from more than two thousand pdf documents,and output in excel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

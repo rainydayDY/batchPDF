@@ -1,3 +1,10 @@
+/**
+ * 主功能模块
+ * @author dy
+ * @createDate 2018/04/14
+ * @updateDate 2018/04/28
+ */
+
 const PDFParser = require('pdf2json');
 const fs = require('fs');
 const src = './pdf';
@@ -77,7 +84,7 @@ class handleFile {
     }
 
     // 释放内存
-    
+
     clearArr(){
         this.list = null;
         this.index = null;

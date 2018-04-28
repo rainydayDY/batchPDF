@@ -11,10 +11,9 @@ a node programing that fetch key infomation from more than two thousand pdf docu
 ### 读取文件
 &nbsp;&nbsp;node读取pdf文件，引入了'pdf2json':
 ```
-npm install pdf2json --sev
+npm install pdf2json --save
 ```
 使用这个包，可以将pdf解析为json格式，从而得到文件的内容
-代码：
 
 ```javascript
 const PDFParser = require('pdf2json');
@@ -46,7 +45,7 @@ result = ['统一社会信用代码：xxx','单位名称：xxx','行业类别：
 ```
 npm install node-xlsx --save
 ```
-使用这个是因为简单，真的很简单，并且也符合需求，上手快。
+使用这个是因为简单，并且也符合需求，上手快。
 ```javascript
 const xlsx = require('node-xlsx');
 var buffer = xlsx.build([{name: 'company', data: list}]);
@@ -84,3 +83,5 @@ promise.then(result => {
 7. [JavaScript 工作原理之二－如何在 V8 引擎中书写最优代码的 5 条小技巧(译)](https://juejin.im/post/5ae1c2936fb9a07a9c03ec1c)
 
 在此鸣谢大学好友邢旭磊。
+
+我的个人博客：[下雨天DY的前端成长记](http://rainydaydy.cn/)

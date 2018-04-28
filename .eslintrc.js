@@ -1,3 +1,9 @@
+/**
+ * ESlint 规范
+ * @author dy
+ * @createDate 2018/03/05
+ */
+
 module.exports = {
     "env": {
         "browser": true,
