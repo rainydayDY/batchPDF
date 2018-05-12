@@ -97,14 +97,29 @@ seek.readFile().then((files) => {
     const len = files.length;
     console.log(`共有文件${files.length}`);
     console.log('开始读取');
+    let startTime = new Date().getTime();
     seek.seek((data) => {
         console.log(`完成解析文件的数量${data.length-1}`);
         if(data.length-1 === len){
             console.log('完成读取');
-            var buffer = xlsx.build([{name: 'company', data: data}]); // Returns a buffer
-            fs.writeFileSync('list.csv', buffer, 'binary');
-            console.log('解析完毕');
-            seek.clearArr();
+            fs.readdir('.', (err, files) => {
+                if(err) {
+                    console.log('读取错误');
+                }else {
+                    let name ='list.csv';
+                    if (files.find(item => item.match('list'))){
+                        files = files.filter(item => {
+                            if (item.match('list')) return true;
+                            return false;
+                        });
+                        name = `list(${files.length}).csv`;
+                    }
+                    var buffer = xlsx.build([{name: 'company', data: data}]); // Returns a buffer
+                    fs.writeFileSync(name, buffer, 'binary');
+                    console.log('解析完毕，共计耗时' + (new Date().getTime()- startTime)/1000 + 's'+'输出文件为：'+ name);
+                    seek.clearArr();
+                }
+            });
         }
     });
 });
